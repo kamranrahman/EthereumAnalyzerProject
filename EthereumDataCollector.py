@@ -5,8 +5,7 @@ import pandas as pd
 import time
 
 with open('Transactions.csv','a') as f: # Use this line to open up a csv file that you will write into. 
-
-
+    
     while True:
         data_request=requests.get('https://api.blockcypher.com/v1/eth/main/txs') # Makes API call to BlockCypher. This will generate a response that contains the data we want.
         json=data_request.json() # Makes sure that API response is JSON
