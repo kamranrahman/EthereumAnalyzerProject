@@ -1,8 +1,7 @@
 # EthereumAnalyzerProject
 
-The purpose of this project is to create an open-source framework for analyzing data from the Ethereum blockchain. The code will be imperfect, so if anyone has improvements, please share. As a non-developer, I am teaching myself Python in the process, and my colleague is taking the data results and running it through a Neo4j graph algorithm.
+My colleague and I are co-owning this project for a blockchain hackathon at EY.
 
-Right now, the only thing I have working is a data collector that collects transaction data from the Ethereum blockchain, and writes (and appends) to an existing csv file. 
+Our hackathon idea is completed and fully checked into this project repo. It consists of a web collector that queries the Ethereum blockchain for transactions to use as training data. Then it takes that training data and loads it into a Neo4j graph database. Through the Neo4j graph database we run the training data through a series of algorithms so that we can carry out an unsupervised learning experiment. The algorithms primarily measure on centrality and betweenness between addresses. The algorithmic output from the Neo4j graph database is then output into a JSON format, which we then serve up to the front-end UI using a force directed graph visualization through the use of D3.
 
-If you have all the modules installed already, you should be able to just run the .py file without any issues. I've got it set to ping the API every 2 minutes. If you hit the API more frequently than that, you'll likely be throttled (unless you pay for more API call capacity).
-
+The front end is not pretty, as many of the nodes seem to go off the screen. Nonetheless, clusterings are clear, and we can continue add new data to teach ouer graph database, so that it can continuously update its graph metrics for better identifying meaningful clusters.
